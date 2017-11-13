@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<!-- classPathEntry:数据库的JDBC驱动的jar包地址 -->
+	<classPathEntry location="WebContent/WEB-INF/lib/ojdbc6.jar" />
+	<context id="DB2Tables" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+		<property name="beginningDelimiter" value="`" />
+		<property name="endingDelimiter" value="`" />
+
+		<plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+			<property name="mappers" value="mapper.MyMapper" />
+		</plugin>
+		<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+			connectionURL="jdbc:oracle:thin:@115.28.130.92:1521:SZCWM" userId="szcwm"
+			password="szcwm">
+		</jdbcConnection>
+		<javaModelGenerator targetPackage="entity"
+			targetProject="C:\work" />
+
+<!-- 		<sqlMapGenerator targetPackage="dao"
+			targetProject="C:\work" />
+
+		<javaClientGenerator targetPackage="dao"
+			targetProject="C:\work" type="XMLMAPPER" /> -->
+
+		<!-- tableName:用于自动生成代码的数据库表；domainObjectName:对应于数据库表的javaBean类名 -->
+		<table schema="SZCWM" tableName="BUSI_VEHICLE_INOUT_PROJECT">
+            <!--  <generatedKey column="id" sqlStatement="oracle" identity="true"/> -->
+		</table>
+	</context>
+
+</generatorConfiguration>
